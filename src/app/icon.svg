@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Three ascending bars -->
+  <rect x="4" y="18" width="6" height="11" rx="1.5" fill="#34a7d6"/>
+  <rect x="13" y="11" width="6" height="18" rx="1.5" fill="#0155a3"/>
+  <rect x="22" y="4" width="6" height="25" rx="1.5" fill="#0155a3"/>
+  <!-- Upward arrow line -->
+  <path d="M3 28 L12 20 L21 13 L27 6" stroke="#866aae" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="29,3 24,8 29,9" fill="#866aae"/>
+</svg>
