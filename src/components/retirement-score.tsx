@@ -4,6 +4,7 @@ import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { ClipboardList, BarChart3, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/fade-in";
 
 const SCORE_URL = "https://www.retirementscorecalculator.com/";
 
@@ -34,28 +35,30 @@ export function RetirementScore() {
   return (
     <section className="py-20 md:py-28 bg-light-purple/50" id="retirement-score">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-semibold text-brand-purple uppercase tracking-widest mb-3">
-            Your Free Starting Point
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-text-body leading-tight mb-6">
-            What&apos;s Your{" "}
-            <span className="text-sky-blue">Retirement Score</span>?
-          </h2>
-          <p className="text-lg text-text-body/70 leading-relaxed">
-            Most Canadians have no idea if they&apos;re actually on track — not
-            a rough guess, but a real number they can plan around. Your free
-            Retirement Score changes that in about 2 minutes.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-sm font-semibold text-brand-purple uppercase tracking-widest mb-3">
+              Your Free Starting Point
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-text-body leading-tight mb-6">
+              What&apos;s Your{" "}
+              <span className="text-sky-blue">Retirement Score</span>?
+            </h2>
+            <p className="text-lg text-text-body/70 leading-relaxed">
+              Most Canadians have no idea if they&apos;re actually on track — not
+              a rough guess, but a real number they can plan around. Your free
+              Retirement Score changes that in about 2 minutes.
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Score card visual */}
-          <div className="relative flex justify-center">
+          <FadeIn className="relative flex justify-center">
             <div className="relative w-full max-w-md">
               <div className="bg-white rounded-3xl shadow-2xl shadow-brand-purple/10 p-8 border border-border">
                 <Image
-                  src="/images/retirement-score-card.png"
+                  src="/images/rsc-img.png"
                   alt="Sample Retirement Score card showing a personalized retirement readiness score"
                   width={400}
                   height={300}
@@ -71,10 +74,10 @@ export function RetirementScore() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Steps */}
-          <div className="space-y-8">
+          <FadeIn delay={150} className="space-y-8">
             {steps.map((step) => (
               <div key={step.number} className="flex items-start gap-5">
                 <div className="flex-shrink-0 h-14 w-14 rounded-2xl bg-gradient-to-br from-brand-purple to-deep-navy flex items-center justify-center shadow-lg shadow-brand-purple/20">
@@ -113,7 +116,7 @@ export function RetirementScore() {
                 Free. Takes about 2 minutes. No commitment required.
               </p>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
