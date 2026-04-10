@@ -58,7 +58,7 @@ export function RetirementScore() {
             <div className="relative w-full max-w-md">
               <div className="bg-white rounded-3xl shadow-2xl shadow-brand-purple/10 p-8 border border-border">
                 <Image
-                  src="/images/retirement-score-card.png"
+                  src="/images/rsc-img.png"
                   alt="Sample Retirement Score card showing a personalized retirement readiness score"
                   width={400}
                   height={300}

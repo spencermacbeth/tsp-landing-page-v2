@@ -9,6 +9,7 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const SCORE_URL = "https://www.retirementscorecalculator.com/";
+const BOOKING_URL = "https://go.retirementscorecalculator.com/book-now";
 
 const navLinks = [
   { label: "How We Help", href: "#services" },
@@ -53,7 +54,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -65,17 +66,32 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a
-            href={SCORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({ variant: "default" }),
-              "bg-sky-blue hover:bg-sky-blue/90 text-white rounded-full px-6"
-            )}
-          >
-            Get Your Free Score
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={SCORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                scrolled
+                  ? "border-brand-purple/30 text-brand-purple hover:bg-brand-purple/5 rounded-full px-5"
+                  : "border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full px-5 bg-transparent"
+              )}
+            >
+              Get Your Free Score
+            </a>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "bg-sky-blue hover:bg-sky-blue/90 text-white rounded-full px-5"
+              )}
+            >
+              Book a Call
+            </a>
+          </div>
         </nav>
 
         {/* Mobile nav */}
@@ -100,17 +116,30 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href={SCORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({ variant: "default" }),
-                  "bg-sky-blue hover:bg-sky-blue/90 text-white rounded-full mt-4"
-                )}
-              >
-                Get Your Free Score
-              </a>
+              <div className="flex flex-col gap-3 mt-4">
+                <a
+                  href={SCORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "border-brand-purple/30 text-brand-purple hover:bg-brand-purple/5 rounded-full"
+                  )}
+                >
+                  Get Your Free Score
+                </a>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: "default" }),
+                    "bg-sky-blue hover:bg-sky-blue/90 text-white rounded-full"
+                  )}
+                >
+                  Book a Call
+                </a>
+              </div>
             </nav>
           </SheetContent>
         </Sheet>
