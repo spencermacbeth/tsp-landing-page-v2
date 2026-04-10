@@ -7,6 +7,7 @@ import {
   Building2,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { FadeIn } from "@/components/fade-in";
 
 const services = [
   {
@@ -54,39 +55,40 @@ export function Services() {
       className="py-20 md:py-28 bg-gradient-to-br from-hero-dark via-hero-mid to-brand-purple"
     >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-semibold text-sky-blue uppercase tracking-widest mb-3">
-            One Call for All Your Needs
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
-            Everything your family&apos;s financial future needs —{" "}
-            <span className="text-sky-blue">in one place.</span>
-          </h2>
-          <p className="text-lg text-white/70 leading-relaxed">
-            As a broker, Brad has access to the full market — not tied to one
-            institution&apos;s products. From retirement income to insurance to
-            estate planning, everything works together as one plan.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-sm font-semibold text-sky-blue uppercase tracking-widest mb-3">
+              One Call for All Your Needs
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+              Everything your family&apos;s financial future needs —{" "}
+              <span className="text-sky-blue">in one place.</span>
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed">
+              As a broker, Brad has access to the full market — not tied to one
+              institution&apos;s products. From retirement income to insurance to
+              estate planning, everything works together as one plan.
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <Card
-              key={service.title}
-              className="bg-white/8 backdrop-blur-sm border-white/10 hover:bg-white/12 transition-all duration-300 hover:-translate-y-1 group"
-            >
-              <CardContent className="p-7">
-                <div className="h-12 w-12 rounded-xl bg-sky-blue/15 flex items-center justify-center mb-5 group-hover:bg-sky-blue/25 transition-colors">
-                  <service.icon className="h-6 w-6 text-sky-blue" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-white/65 leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
+          {services.map((service, i) => (
+            <FadeIn key={service.title} delay={i * 100}>
+              <Card className="bg-white/8 backdrop-blur-sm border-white/10 hover:bg-white/12 transition-all duration-300 hover:-translate-y-1 group h-full">
+                <CardContent className="p-7">
+                  <div className="h-12 w-12 rounded-xl bg-sky-blue/15 flex items-center justify-center mb-5 group-hover:bg-sky-blue/25 transition-colors">
+                    <service.icon className="h-6 w-6 text-sky-blue" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-white/65 leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </FadeIn>
           ))}
         </div>
       </div>

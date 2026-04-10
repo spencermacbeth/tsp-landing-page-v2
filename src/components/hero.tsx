@@ -74,7 +74,7 @@ export function Hero() {
                 href="#services"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full px-8 text-base h-14 bg-transparent"
+                  "border-white/40 text-white hover:bg-white/15 hover:text-white rounded-full px-8 text-base h-14 bg-white/5 backdrop-blur-sm"
                 )}
               >
                 How We Help
@@ -114,8 +114,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      {/* Bottom fade — matches stats band purple */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-purple/80 to-transparent" />
     </section>
   );
 }

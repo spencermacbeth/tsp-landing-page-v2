@@ -41,7 +41,7 @@ export function Header() {
             alt="The Simple Plan"
             width={44}
             height={44}
-            className={`rounded-lg transition-all ${scrolled ? "invert" : ""}`}
+            className="rounded-lg w-auto h-auto"
           />
           <span
             className={`text-lg font-bold tracking-tight transition-colors ${
